@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #153b3d 50%, #3c6e71 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+.bg3 {
+  animation-duration:5s;
+}
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-animation: fadein 2s;
+  animation: fadein 2s;
+}
+#top {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+#title {
+  text-align: center;
+  font-size: 4em;
+  font-weight: 900;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+#subtitle {
+  color: white;
+}
+#nickname {
+  font-size: 10px;
+}
+#actions {
+  margin: 15px 0;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+#dark {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #000;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #000;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+#entry {
+  margin: 10px 0;
+  font-size: 20px;
+  text-align: center;
+  outline: none;
+  border: none;
+  padding: 20px 0;
+  font-weight: 500;
+  border-radius: 10px;
+  width: 1000px;
+  color: black;
+  box-shadow: 1px 1px 5px rgb(0,0,0,0.5);
+}
+#add {
+  border: none;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px 10px;
+  outline: none;
+  background: rgb(0,0,0,0);
+  color: grey;
+}
+#add:hover {
+  background: rgb(0,0,0,0.1);
+  color: white;
+}
+#todos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  color: white;
+  width: 100%;
+}
+.todo {
+  width: 100%;
+  margin: 5px 0;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background: rgb(0,0,0, 1);
+  border-radius: 10px;
+}
+.completed { 
+  background: rgb(255,255,255,0.1);
+  color: rgb(255,255,255,0.2);
+}
+.taskContent {
+  word-break: break-word;
+  text-align: center;
+}
+.delete {
+  border: none;
+  padding: 5px 10px;
+  background: none;
+  color: white;
+  outline: none;
+  font-size: 20px;
+}
+#octicon {
+  filter: invert(1);
+  margin-top: 15px;
+}
+#btnClear {
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  padding: 10px;
+  width: 100VW;
+  background: rgb(0,0,0,0.8);
+  position: fixed;
+  bottom: 0;
+  color: white;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+@media only screen and (max-width: 2560px) {
+  #entry {
+    padding: 15px 0;
+    width: 1080px;
+  }
+  .todo {
+    width: 980px;
+  }
+}
+@media only screen and (max-width: 1920px) {
+  #entry {
+    padding: 15px 0;
+    width: 1080px;
+  }
+  .todo {
+    width: 980px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  #entry {
+    padding: 15px 0;
+    width: 600px;
+  }
+  .todo {
+    width: 600px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  #entry {
+    padding: 13px 0;
+    width: 400px;
+  }
+  .todo {
+    width: 400px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  #entry {
+    padding: 10px 0;
+    width: 280px;
+  }
+  .todo {
+    width: 280px;
+  }
+}
+@media only screen and (max-width: 300px) {
+  #entry {
+    padding: 10px 0;
+    width: 200px;
+  }
+  .todo {
+    width: 200px;
+  }
+}
+@media only screen and (max-width: 200px) {
+  #entry {
+    padding: 10px 0;
+    width: 150px;
+  }
+  .todo {
+    width: 150px;
+  }
+}
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
